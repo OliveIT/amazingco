@@ -75,6 +75,30 @@ const styles = {
       color: '#fff',
       fontWeight: 'bold'
     }
+  },
+
+  Experience: {
+    pageContainer: {
+      paddingTop: width * 0.2,
+      paddingLeft: width * 0.05,
+      paddingRight: width * 0.05,
+    },
+    headerTxt: {
+      fontSize: width * 0.07,
+      fontWeight: 'bold',
+      color: '#111',
+      marginBottom: width * 0.05
+    },
+    startBtnContainer: {
+      width: width * 0.9,
+      height: width * 0.564,
+      borderRadius: width * 0.05,
+      overflow: 'hidden'
+    },
+    startBtnImage: {
+      width: width * 0.9,
+      height: width * 0.564
+    }
   }
 };
 

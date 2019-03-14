@@ -2,6 +2,7 @@ import React from "react";
 import { createDrawerNavigator, createStackNavigator, createAppContainer } from "react-navigation";
 
 import Splash from "../containers/unsecure/splash";
+import Experience from "../containers/unsecure/experience";
 
 export const INITIAL_ROUTE = 'unsecured';
 export const INITIAL_SECURED_ROUTE = 'home';
@@ -10,8 +11,14 @@ export const INITIAL_UNSECURED_ROUTE = 'splash';
 
 const unsecuredRoutes = {
   splash: {
-      screen: Splash
+    screen: Splash
   },
+  experience: {
+    screen: Experience
+  },
+/*  weather: {
+    screen: Weather
+  }*/
 }
 
 const Routes = {
