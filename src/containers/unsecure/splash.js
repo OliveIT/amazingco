@@ -3,6 +3,8 @@ import { View, Image, ImageBackground, Text, Dimensions, TextInput, TouchableOpa
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from "react-redux";
 
+import { fetchData } from '../../redux/actions';
+
 import backgroundImage from '../../../images/background.png';
 import logo from '../../../images/amazingco-logo.png';
 import styles from '../../styles';
@@ -40,7 +42,9 @@ class Splash extends React.Component {
   }
 
   onBtnGo() {
-
+    this.props.fetchData(() => {
+//      this.props.navigation.replace('')
+    });
   }
 
   render() {
@@ -64,7 +68,7 @@ class Splash extends React.Component {
             <TextInput style={styles.Splash.codeInput}
               onFocus={this.onFocusCode.bind(this)}
               onBlur={this.onBlurCode.bind(this)}
-              placeholder="MP - 123456 - 012345"></TextInput>
+              placeholder="MP-123456-010219"></TextInput>
             <TouchableOpacity style={[styles.Splash.codeBtnContainer, this.state.isFocusCode ? {backgroundColor: '#b2e282'} : {}]}
               onPress={this.onBtnGo.bind(this)}>
               <Text style={styles.Splash.codeBtnText}>GO</Text>
@@ -76,7 +80,12 @@ class Splash extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  data: state.reducer.data
+});
 
+const mapDispatchToProps = {
+  fetchData,
+}
 
-
-export default connect()(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);
