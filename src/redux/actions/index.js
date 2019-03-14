@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const fetchData = (callback) => {
   return (dispatch) => {
-    console.log("fetchData");
     const apiUrl = 'https://raw.githubusercontent.com/amazing-co/ac-route/master/MP-123456-010219.json';
 
     return axios.get(apiUrl)

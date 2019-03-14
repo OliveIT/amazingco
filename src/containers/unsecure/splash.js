@@ -13,8 +13,8 @@ class Splash extends React.Component {
   static navigationOptions = {
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       splashHeight: 1,
       isFocusCode: false
@@ -26,7 +26,7 @@ class Splash extends React.Component {
       this.setState({
         splashHeight: 0.7,
       });
-    }, 0);
+    }, 800);
   }
 
   onFocusCode() {

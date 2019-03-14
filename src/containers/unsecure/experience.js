@@ -6,8 +6,8 @@ import experience from '../../../images/experience.png';
 
 class Experience extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
     }
   }
