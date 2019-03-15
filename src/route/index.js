@@ -4,6 +4,7 @@ import { createDrawerNavigator, createStackNavigator, createAppContainer } from 
 import Splash from "../containers/unsecure/splash";
 import Experience from "../containers/unsecure/experience";
 import Weather from "../containers/unsecure/weather";
+import Stops from "../containers/unsecure/stops";
 
 export const INITIAL_ROUTE = 'unsecured';
 export const INITIAL_SECURED_ROUTE = 'home';
@@ -19,7 +20,10 @@ const unsecuredRoutes = {
   },
   weather: {
     screen: Weather
-  }
+  },
+  stops: {
+    screen: Stops
+  },
 }
 
 const Routes = {

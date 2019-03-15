@@ -31,7 +31,6 @@ const styles = {
     width: width * 0.8,
     backgroundColor: '#aaa',
     alignSelf: 'center',
-    marginBottom: width * 0.04
   },
 
   ///Components
@@ -90,6 +89,126 @@ const styles = {
     },
     text: {
       color: '#fff'
+    }
+  },
+
+  LinkButton: {
+    container: {
+      width: width * 0.5,
+      height: width * 0.1,
+      alignSelf: 'center',
+      borderRadius: width * 0.05,
+      justifyContent: 'center', 
+      alignItems: 'center'
+    },
+    text: {
+      color: '#52a8ef'
+    }
+  },
+
+  Toolbar: {
+    mainContainer: {
+      width: width,
+      height: height - width * 0.35
+    },
+    Container: {
+      width: width,
+      height: width * 0.35,
+      borderTopWidth: 1,
+      borderTopColor: '#eee',
+      display: 'flex',
+      flexDirection: 'row',
+      flex: 3,
+      justifyContent: 'center', 
+      alignItems: 'center' 
+    },
+
+    item: {
+      width: width * 0.35,
+      flex: 1,
+      justifyContent: 'center', 
+      alignItems: 'center' 
+    },
+    icon: {
+    },
+    text: {
+      color: '#c4c4c4',
+    },
+  },
+
+  PickupModal: {
+    container: {
+      width: width,
+      marginLeft: - width * 0.05,
+      height: height,
+      backgroundColor: '#000000aa',
+      alignContent: 'flex-start',
+      alignItems: 'flex-start',
+      alignSelf: 'flex-start',
+      paddingTop: width * 0.1,
+      paddingLeft: width * 0.05,
+      paddingRight: width * 0.05,
+    },
+    title: {
+      fontSize: width * 0.06,
+      color: '#fff',
+      fontWeight: 'bold',
+      marginBottom: width * 0.05
+    },
+    content: {
+      width: width * 0.9,
+      height: height - width * 0.55,
+      borderRadius: width * 0.05,
+      overflow: 'hidden',
+      backgroundColor: '#fff',
+      marginBottom: width * 0.1
+    },
+    imageHeaderContainer: {
+      width: width * 0.9,
+      height: width * 0.5,
+      backgroundColor: '#3990d7',
+      justifyContent: 'center', 
+      alignItems: 'center',
+      borderRadius: width * 0.05,
+      overflow: 'hidden',
+    },
+    logo: {
+      width: width * 0.8,
+      height: width * 0.2
+    },
+    textContainer: {
+      paddingLeft: width * 0.05,
+      paddingRight: width * 0.05,
+      paddingTop: width * 0.1,
+    },
+    mainText: {
+      color: '#ff765f',
+      fontSize: width * 0.09,
+      marginBottom: width * 0.03
+    },
+    minorText: {
+      color: '#000',
+      fontSize: width * 0.06,
+      fontWeight: 'bold',
+      marginBottom: width * 0.03
+    },
+    description: {
+      fontSize: width * 0.035
+    },
+    closeButton: {
+      justifyContent: 'center', 
+      alignSelf: 'center',
+      alignItems: 'center',
+      backgroundColor: '#52a8ef',
+      width: width * 0.15,
+      height: width * 0.15,
+      borderRadius: width * 0.75
+    }
+  },
+
+  ClueModal: {
+    content: {
+      backgroundColor: 'transparent'
     }
   },
 
@@ -189,6 +308,8 @@ const styles = {
       paddingLeft: width * 0.05
     },
     weather: {
+      width: width * 0.2,
+      height: width * 0.18,
     },
     minorHeaderText: {
       color: '#fff',
@@ -203,7 +324,7 @@ const styles = {
     mainContainer: {
       marginTop: - width * 0.05,
       paddingTop: width * 0.1,
-      paddingBottom: width * 0.1,
+      paddingBottom: width * 0.05,
       paddingLeft: width * 0.05,
       paddingRight: width * 0.05,
       backgroundColor: '#fff'

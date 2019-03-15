@@ -4,7 +4,6 @@ import { View, Image, ImageBackground, Text, Dimensions, TextInput, TouchableOpa
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles';
 
-import sun from '../../images/sun.png';
 
 class WeatherBox extends React.Component {
 
@@ -13,6 +12,7 @@ class WeatherBox extends React.Component {
     this.state = {
       min: 16,
       max: 21,
+      source: null,
       ...props
     }
   }
@@ -20,7 +20,7 @@ class WeatherBox extends React.Component {
   render() {
     return (
       <View style={[styles.WeatherBox.container, this.props.style]}>
-        <Image source={sun} style={styles.WeatherBox.image}/>
+        <Image source={this.state.source} style={styles.WeatherBox.image}/>
         <Text style={styles.WeatherBox.text}>{this.state.min}° / {this.state.max}°</Text>
       </View>
     );
