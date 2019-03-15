@@ -82,13 +82,23 @@ const styles = {
       alignSelf: 'center',
       borderRadius: width * 0.05,
       justifyContent: 'center', 
-      alignItems: 'center'
+      alignItems: 'center',
+      marginBottom: width * 0.05
     },
     blue: {
       backgroundColor: '#52a8ef'
     },
     text: {
       color: '#fff'
+    },
+    white: {
+      backgroundColor: '#fff',
+      borderColor: '#aaa',
+      borderWidth: 1,
+      color: '#aaa'
+    },
+    whiteText: {
+      color: '#aaa'
     }
   },
 
@@ -366,6 +376,19 @@ const styles = {
       height: width * 1.2,
       marginTop: - width * 0.2,
       paddingTop: width * 0.7
+    }
+  },
+
+  Crackcode: {
+    headerImage: {
+      width: width,
+      height: width * 0.4
+    },
+    contentImage: {
+      width: width * 0.9,
+      height: width * 0.53,
+      marginLeft: width * 0.05,
+      marginBottom: width * 0.05
     }
   }
 };

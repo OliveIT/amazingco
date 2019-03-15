@@ -16,6 +16,14 @@ class Stops extends React.Component {
     }
   }
 
+  onBtnCrackCode() {
+    this.props.navigation.navigate("crackcode");
+  }
+
+  onBtnSkipCode() {
+    this.props.navigation.navigate("offer");
+  }
+
   render() {
     const {title, subTitle, text, medias} = this.props.data.stops [0];
 
@@ -40,11 +48,11 @@ class Stops extends React.Component {
             <View style={styles.line}></View>
           </View>
 
-          <TouchableOpacity style={[styles.Button.container, styles.Button.blue]}>
+          <TouchableOpacity style={[styles.Button.container, styles.Button.blue]} onPress={this.onBtnCrackCode.bind(this)}>
             <Text style={styles.Button.text}>Crack the Code</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.LinkButton.container}>
+          <TouchableOpacity style={styles.LinkButton.container} onPress={this.onBtnSkipCode.bind(this)}>
             <Text style={styles.LinkButton.text}>Skip code</Text>
           </TouchableOpacity>
         </ScrollView>

@@ -5,6 +5,7 @@ import Splash from "../containers/unsecure/splash";
 import Experience from "../containers/unsecure/experience";
 import Weather from "../containers/unsecure/weather";
 import Stops from "../containers/unsecure/stops";
+import Crackcode from "../containers/unsecure/crackcode";
 
 export const INITIAL_ROUTE = 'unsecured';
 export const INITIAL_SECURED_ROUTE = 'home';
@@ -24,6 +25,9 @@ const unsecuredRoutes = {
   stops: {
     screen: Stops
   },
+  crackcode: {
+    screen: Crackcode
+  }
 }
 
 const Routes = {
