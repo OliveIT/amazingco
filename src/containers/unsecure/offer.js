@@ -14,6 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { setStop } from '../../redux/actions';
 
 import logo from '../../../images/amazingco-logo.png';
+import background from '../../../images/background.png';
 class Offer extends React.Component {
 
   constructor() {
@@ -43,19 +44,18 @@ class Offer extends React.Component {
   }
 
   onBtnFeedScore(score) {
-    alert(score);
+    this.setState({activeFeedback: score});
   }
 
   onBtnFeedback() {
-    this.props.navigation.navigate("experience");
-    this.props.setStop(this.props.curStop + 1);
+    this.props.navigation.navigate("experience", {curStop: 2});
   }
 
   render() {
-    const {curStop} = this.props;
+    let {curStop} = this.props;
+    if (curStop == 2) curStop = 1;
     const {dropOff, product} = this.props.data;
     const {medias, clues, provider, action, where, pois} = this.props.data.stops [curStop];
-    const clue = clues [0];
 
     let nextClueTitle = "Next Clue";
     if (curStop == 1)
@@ -118,15 +118,17 @@ class Offer extends React.Component {
           <View style={[styles.PickupModal.container]}>
             <Text style={styles.PickupModal.title}> </Text>
             <View style={styles.PickupModal.content}>
-              <ImageBackground style={styles.PickupModal.imageHeaderContainer}>
-                <Image source={logo} style={styles.PickupModal.logo}/>
-                <Text style={styles.Splash.logoText}>Time better spent</Text>
+              <ImageBackground style={styles.CompleteModal.imageHeaderContainer} source={background}>
+                <LinearGradient colors={['#00000000', '#000000ff']} style={styles.CompleteModal.imageHeaderContainer}>
+                  <Image source={logo} style={styles.PickupModal.logo}/>
+                  <Text style={styles.Splash.logoText}>Time better spent</Text>
+                </LinearGradient>
               </ImageBackground>
               <View style={styles.PickupModal.textContainer}>
-                <Text style={styles.PickupModal.mainText}>Thank you...</Text>
+                <Text style={styles.PickupModal.minorText}>Thank you...</Text>
                 <Text style={styles.PickupModal.description}>From us at AmazingCo, we hope you've had a ball, when you're planning your next date - you know who to call!</Text>
 
-                <Text style={styles.PickupModal.minorText}>Don't Forget</Text>
+                <Text style={styles.PickupModal.mainText}>Don't Forget</Text>
                 <Text style={styles.PickupModal.description}>Drop Off Your Picnic Basket To</Text>
 
                 <Text style={[styles.PickupModal.description, styles.bold]}>
@@ -138,7 +140,7 @@ class Offer extends React.Component {
             <TouchableOpacity
               style={styles.PickupModal.closeButton}
               onPress={this.onBtnCompleteNext.bind(this)}>
-              <Icon name="arrow-right" color='#fff' size={20}/>
+              <Icon name="chevron-right" color='#fff' size={10}/>
             </TouchableOpacity>
           </View>
         </Modal>
@@ -151,13 +153,12 @@ class Offer extends React.Component {
           <View style={[styles.PickupModal.container]}>
             <Text style={styles.PickupModal.title}>Feedback</Text>
             <View style={styles.PickupModal.content}>
-              <Image source={logo} style={styles.PickupModal.logo}/>
+              <Image source={logo} style={styles.FeedbackModal.logo}/>
 
-              <View style={styles.PickupModal.textContainer}>
-                <Text style={styles.PickupModal.mainText}>How likely are you to recommend {product.name} {product.shortName}?</Text>
-                <Text style={styles.PickupModal.description}>From us at AmazingCo, we hope you've had a ball, when you're planning your next date - you know who to call!</Text>
+              <View style={styles.FeedbackModal.textContainer}>
+                <Text style={styles.PickupModal.minorText}>How likely are you to recommend {product.name} {product.shortName}?</Text>
 
-                <Text style={styles.PickupModal.description}>0 = Unlikely. 10 = Very Likely</Text>
+                <Text style={styles.FeedbackModal.description}>0 = Unlikely. 10 = Very Likely</Text>
 
                 <View style={styles.FeedbackModal.btnContainer}>
                   {[0,1,2,3,4,5].map((value, index) => 
@@ -177,7 +178,7 @@ class Offer extends React.Component {
                 </View>
 
                 <TouchableOpacity
-                  style={styles.PickupModal.closeButton}
+                  style={styles.FeedbackModal.closeButton}
                   onPress={this.onBtnFeedback.bind(this)}>
                   <Icon name="check" color='#fff' size={20}/>
                 </TouchableOpacity>

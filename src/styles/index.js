@@ -241,16 +241,50 @@ const styles = {
     }
   },
 
+  CompleteModal: {
+    imageHeaderContainer: {
+      width: width * 0.9,
+      height: width * 0.5,
+      justifyContent: 'center', 
+      alignItems: 'center',
+      borderRadius: width * 0.05,
+      overflow: 'hidden',
+    },
+  },
+
   FeedbackModal: {
-    btnContainer: {
+    logo: {
       width: width * 0.8,
-      flexDirection: 'row',
+      height: width * 0.2,
+      marginTop: width * 0.08,
       alignSelf: 'center'
     },
+    textContainer: {
+      paddingLeft: width * 0.05,
+      paddingRight: width * 0.05,
+      paddingTop: width * 0.05,
+    },
+    description: {
+      color: '#777',
+      fontSize: width * 0.04
+    },
+    btnContainer: {
+      width: width * 0.7,
+      flexDirection: 'row',
+      alignSelf: 'center',
+      marginTop: width * 0.05
+    },
     btn: {
-      flex: 1,
+      width: width * 0.08,
+      height: width * 0.08,
+      marginLeft: width * 0.02,
+      marginRight: width * 0.02,
       backgroundColor: '#e1e8ee',
-      borderRadius: width * 0.02
+      borderRadius: width * 0.02,
+      alignContent: 'center',
+      alignSelf: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     btnActive: {
       backgroundColor: '#52a8ef'
@@ -261,6 +295,16 @@ const styles = {
     },
     btnActiveText: {
       color: '#fff'
+    },
+    closeButton: {
+      justifyContent: 'center', 
+      alignSelf: 'center',
+      alignItems: 'center',
+      backgroundColor: '#52a8ef',
+      width: width * 0.15,
+      height: width * 0.15,
+      borderRadius: width * 0.75,
+      marginTop: width * 0.1
     }
   },
 
@@ -392,12 +436,13 @@ const styles = {
       paddingRight: width * 0.04,
       paddingTop: width * 0.02,
       paddingBottom: width * 0.02,
-      borderRadius: width * 0.03,
+      borderRadius: width * 0.04,
       color: '#fff',
       backgroundColor: '#ff765f',
       width: width * 0.4,
       marginTop: width * 0.01,
       marginBottom: width * 0.01,
+      textAlign: 'center'
     },
     space: {
       flex: 1
