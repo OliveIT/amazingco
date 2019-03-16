@@ -381,11 +381,34 @@ const styles = {
       width: width * 0.9,
       height: width * 0.564,
       borderRadius: width * 0.05,
-      overflow: 'hidden'
+      overflow: 'hidden',
     },
     startBtnImage: {
       width: width * 0.9,
-      height: width * 0.564
+      height: width * 0.564,
+    },
+    btnOrange: {
+      paddingLeft: width * 0.04,
+      paddingRight: width * 0.04,
+      paddingTop: width * 0.02,
+      paddingBottom: width * 0.02,
+      borderRadius: width * 0.03,
+      color: '#fff',
+      backgroundColor: '#ff765f',
+      width: width * 0.4,
+      marginTop: width * 0.01,
+      marginBottom: width * 0.01,
+    },
+    space: {
+      flex: 1
+    },
+    linearBack: {
+      padding: width * 0.05
+    },
+    mainText: {
+      fontSize: width * 0.07,
+      color: '#fff',
+      fontWeight: 'bold',
     }
   },
 

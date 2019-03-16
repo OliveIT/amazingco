@@ -3,7 +3,7 @@ import { View, Image, ImageBackground, Text, Dimensions, TextInput, TouchableOpa
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from "react-redux";
 
-import { fetchData } from '../../redux/actions';
+import { fetchData, setStop } from '../../redux/actions';
 
 import backgroundImage from '../../../images/background.png';
 import logo from '../../../images/amazingco-logo.png';
@@ -27,6 +27,7 @@ class Splash extends React.Component {
         splashHeight: 0.7,
       });
     }, 800);
+    this.props.setStop(0);
   }
 
   onFocusCode() {
@@ -87,6 +88,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchData,
+  setStop
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash);

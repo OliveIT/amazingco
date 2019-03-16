@@ -13,8 +13,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { setStop } from '../../redux/actions';
 
-import logo from '../../images/amazingco-logo.png';
-import background from '../../images/background.png';
+import logo from '../../../images/amazingco-logo.png';
 class Offer extends React.Component {
 
   constructor() {
