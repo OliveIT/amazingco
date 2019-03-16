@@ -21,7 +21,9 @@ class Offer extends React.Component {
     super();
     this.state = {
       isShowedHint: false,
-      modalComplete: false
+      modalComplete: false,
+      modalFeedback: false,
+      activeFeedback: 10
     }
   }
 
@@ -35,13 +37,24 @@ class Offer extends React.Component {
   }
 
   onBtnCompleteNext() {
+    this.setState({
+      modalComplete: false,
+      modalFeedback: true,
+    });
+  }
+
+  onBtnFeedScore(score) {
+    alert(score);
+  }
+
+  onBtnFeedback() {
     this.props.navigation.navigate("experience");
     this.props.setStop(this.props.curStop + 1);
   }
 
   render() {
     const {curStop} = this.props;
-    const {dropOff} = this.props.data;
+    const {dropOff, product} = this.props.data;
     const {medias, clues, provider, action, where, pois} = this.props.data.stops [curStop];
     const clue = clues [0];
 
@@ -128,6 +141,49 @@ class Offer extends React.Component {
               onPress={this.onBtnCompleteNext.bind(this)}>
               <Icon name="arrow-right" color='#fff' size={20}/>
             </TouchableOpacity>
+          </View>
+        </Modal>
+        
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.modalFeedback}
+          swipeDirection='up'>
+          <View style={[styles.PickupModal.container]}>
+            <Text style={styles.PickupModal.title}>Feedback</Text>
+            <View style={styles.PickupModal.content}>
+              <Image source={logo} style={styles.PickupModal.logo}/>
+
+              <View style={styles.PickupModal.textContainer}>
+                <Text style={styles.PickupModal.mainText}>How likely are you to recommend {product.name} {product.shortName}?</Text>
+                <Text style={styles.PickupModal.description}>From us at AmazingCo, we hope you've had a ball, when you're planning your next date - you know who to call!</Text>
+
+                <Text style={styles.PickupModal.description}>0 = Unlikely. 10 = Very Likely</Text>
+
+                <View style={styles.FeedbackModal.btnContainer}>
+                  {[0,1,2,3,4,5].map((value, index) => 
+                    <TouchableOpacity 
+                      style={[styles.FeedbackModal.btn, this.state.activeFeedback == value ? styles.FeedbackModal.btnActive : {}]} key={index}
+                      onPress={this.onBtnFeedScore.bind(this, value)}>
+                      <Text style={[styles.FeedbackModal.btnText, this.state.activeFeedback == value ? styles.FeedbackModal.btnActiveText : {}]}>{value}</Text>
+                    </TouchableOpacity>)}
+                </View>
+                <View style={styles.FeedbackModal.btnContainer}>
+                  {[6,7,8,9,10].map((value, index) => 
+                    <TouchableOpacity 
+                      style={[styles.FeedbackModal.btn, this.state.activeFeedback == value ? styles.FeedbackModal.btnActive : {}]} key={index}
+                      onPress={this.onBtnFeedScore.bind(this, value)}>
+                      <Text style={[styles.FeedbackModal.btnText, this.state.activeFeedback == value ? styles.FeedbackModal.btnActiveText : {}]}>{value}</Text>
+                    </TouchableOpacity>)}
+                </View>
+
+                <TouchableOpacity
+                  style={styles.PickupModal.closeButton}
+                  onPress={this.onBtnFeedback.bind(this)}>
+                  <Icon name="check" color='#fff' size={20}/>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </Modal>
       </View>

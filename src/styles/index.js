@@ -241,6 +241,29 @@ const styles = {
     }
   },
 
+  FeedbackModal: {
+    btnContainer: {
+      width: width * 0.8,
+      flexDirection: 'row',
+      alignSelf: 'center'
+    },
+    btn: {
+      flex: 1,
+      backgroundColor: '#e1e8ee',
+      borderRadius: width * 0.02
+    },
+    btnActive: {
+      backgroundColor: '#52a8ef'
+    },
+    btnText: {
+      color: '#000',
+      fontSize: width * 0.03
+    },
+    btnActiveText: {
+      color: '#fff'
+    }
+  },
+
   StopView: {
     container: {
       height: width * 0.7,
