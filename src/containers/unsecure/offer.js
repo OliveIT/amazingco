@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ScrollView, View, Image, ImageBackground, Text, Alert, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from "react-redux";
+import Modal from "react-native-modal";
 
 import BackButton from '../../components/backbutton';
 import Toolbar from '../../components/toolbar';
@@ -11,12 +12,16 @@ import styles from '../../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { setStop } from '../../redux/actions';
+
+import logo from '../../images/amazingco-logo.png';
+import background from '../../images/background.png';
 class Offer extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      isShowedHint: false
+      isShowedHint: false,
+      modalComplete: false
     }
   }
 
@@ -25,12 +30,18 @@ class Offer extends React.Component {
       this.props.navigation.push("stops");
       this.props.setStop(this.props.curStop + 1);
     } else {
-      alert("complete");
+      this.setState({modalComplete: true});
     }
+  }
+
+  onBtnCompleteNext() {
+    this.props.navigation.navigate("experience");
+    this.props.setStop(this.props.curStop + 1);
   }
 
   render() {
     const {curStop} = this.props;
+    const {dropOff} = this.props.data;
     const {medias, clues, provider, action, where, pois} = this.props.data.stops [curStop];
     const clue = clues [0];
 
@@ -86,6 +97,39 @@ class Offer extends React.Component {
           <StopView stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
         </ScrollView>
         <Toolbar/>
+        
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.modalComplete}
+          swipeDirection='up'>
+          <View style={[styles.PickupModal.container]}>
+            <Text style={styles.PickupModal.title}> </Text>
+            <View style={styles.PickupModal.content}>
+              <ImageBackground style={styles.PickupModal.imageHeaderContainer}>
+                <Image source={logo} style={styles.PickupModal.logo}/>
+                <Text style={styles.Splash.logoText}>Time better spent</Text>
+              </ImageBackground>
+              <View style={styles.PickupModal.textContainer}>
+                <Text style={styles.PickupModal.mainText}>Thank you...</Text>
+                <Text style={styles.PickupModal.description}>From us at AmazingCo, we hope you've had a ball, when you're planning your next date - you know who to call!</Text>
+
+                <Text style={styles.PickupModal.minorText}>Don't Forget</Text>
+                <Text style={styles.PickupModal.description}>Drop Off Your Picnic Basket To</Text>
+
+                <Text style={[styles.PickupModal.description, styles.bold]}>
+                {dropOff.where.name} {dropOff.text}</Text>
+
+                <Text style={[styles.PickupModal.description, styles.bold]}>{dropOff.where.address}</Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={styles.PickupModal.closeButton}
+              onPress={this.onBtnCompleteNext.bind(this)}>
+              <Icon name="arrow-right" color='#fff' size={20}/>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </View>
     );
   }
