@@ -6,6 +6,8 @@ import Experience from "../containers/unsecure/experience";
 import Weather from "../containers/unsecure/weather";
 import Stops from "../containers/unsecure/stops";
 import Crackcode from "../containers/unsecure/crackcode";
+import Easierclue from "../containers/unsecure/easierclue";
+import Offer from "../containers/unsecure/offer";
 
 export const INITIAL_ROUTE = 'unsecured';
 export const INITIAL_SECURED_ROUTE = 'home';
@@ -27,6 +29,12 @@ const unsecuredRoutes = {
   },
   crackcode: {
     screen: Crackcode
+  },
+  easierclue: {
+    screen: Easierclue
+  },
+  offer: {
+    screen: Offer
   }
 }
 

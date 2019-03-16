@@ -33,6 +33,22 @@ const styles = {
     alignSelf: 'center',
   },
 
+  flex: {
+    flexDirection: 'row'
+  },
+  iconRing: {
+    width: width * 0.1,
+    height: width * 0.1,
+    borderRadius: width * 0.05,
+    backgroundColor: '#b2e282',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  bold: {
+    fontWeight: 'bold'
+  },
+
   ///Components
   BackButton: {
     btnContainer: {
@@ -77,16 +93,20 @@ const styles = {
 
   Button: {
     container: {
-      width: width * 0.5,
-      height: width * 0.1,
+      height: width * 0.13,
       alignSelf: 'center',
-      borderRadius: width * 0.05,
+      borderRadius: width * 0.065,
       justifyContent: 'center', 
       alignItems: 'center',
-      marginBottom: width * 0.05
+      paddingLeft: width * 0.1,
+      paddingRight: width * 0.1,
+      marginBottom: width * 0.05,
     },
     blue: {
       backgroundColor: '#52a8ef'
+    },
+    orange: {
+      backgroundColor: '#ff765f'
     },
     text: {
       color: '#fff'
@@ -95,7 +115,6 @@ const styles = {
       backgroundColor: '#fff',
       borderColor: '#aaa',
       borderWidth: 1,
-      color: '#aaa'
     },
     whiteText: {
       color: '#aaa'
@@ -219,6 +238,45 @@ const styles = {
   ClueModal: {
     content: {
       backgroundColor: 'transparent'
+    }
+  },
+
+  StopView: {
+    container: {
+      height: width * 0.7,
+      padding: width * 0.02,
+      paddingTop: width * 0.03,
+
+    },
+    fullWidth: {
+      width: width,
+      marginBottom: - width * 0.2
+    },
+    titleContainer: {
+      width: width * 0.8,
+      height: width * 0.13,
+      flexDirection: 'row',
+      paddingLeft: width * 0.05,
+      paddingRight: width * 0.05,
+      backgroundColor: '#9fafc6aa',
+      borderRadius: width * 0.075,
+      overflow: 'hidden',
+      alignItems: 'center',
+    },
+    fullWidthTitle: {
+      width: width * 0.96
+    },
+    title: {
+      fontWeight: 'bold',
+      color: '#fff',
+      flex: 1,
+      fontSize: width * 0.05,
+      fontWeight: 'bold'
+    },
+    lock: {},
+    upIcon: {
+      alignSelf: 'center',
+      margin: width * 0.15
     }
   },
 
@@ -389,6 +447,31 @@ const styles = {
       height: width * 0.53,
       marginLeft: width * 0.05,
       marginBottom: width * 0.05
+    }
+  },
+
+  Offer: {
+    mainText: {
+      color: '#ff765f',
+      fontSize: width * 0.07,
+      marginBottom: width * 0.03,
+      fontWeight: 'bold'
+    },
+    minorText: {
+      fontSize: width * 0.05,
+      marginBottom: width * 0.04
+    },
+    icon: {
+      marginTop: 2,
+      width: width * 0.1,
+    },
+    description: {
+      fontSize: width * 0.04,
+      color: '#555',
+      marginBottom: width * 0.04
+    },
+    paddingBox: {
+      paddingRight: width * 0.1
     }
   }
 };

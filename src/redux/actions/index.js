@@ -1,4 +1,4 @@
-import { GET_DATA } from '../types';
+import { GET_DATA, SET_STOP } from '../types';
 import axios from 'axios';
 
 export const fetchData = (callback) => {
@@ -15,3 +15,7 @@ export const fetchData = (callback) => {
       });
   };
 };
+
+// export const setStop = (stop) => {
+//   return (dispatch) => dispatch({ type: SET_STOP, payload: stop });
+// }
