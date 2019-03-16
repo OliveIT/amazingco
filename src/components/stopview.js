@@ -41,6 +41,7 @@ class StopView extends React.Component {
           <Icon name="lock" color='#fff' style={styles.StopView.lock} size={20}></Icon> :
           <Icon name="unlock-alt" color='#fff' style={styles.StopView.lock} size={20}></Icon>}
         </TouchableOpacity>
+        
         {isUpShow ?
         <Icon name="arrow-up" color='#fff' style={styles.StopView.upIcon} size={25}></Icon> : null}
       </ImageBackground>

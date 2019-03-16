@@ -43,6 +43,7 @@ class Splash extends React.Component {
   }
 
   onBtnGo() {
+    this.props.setStop(0);
     this.props.fetchData(() => {
       this.props.navigation.navigate('experience');
 //      this.props.navigation.navigate('offer');

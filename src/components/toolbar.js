@@ -104,7 +104,7 @@ class Toolbar extends React.Component {
             <Text style={styles.PickupModal.title}>{product.shortName} Clue List</Text>
             <View style={[styles.PickupModal.content, styles.ClueModal.content]}>
               {stops.map((item, index) => 
-                <StopView stop={index} title={item.title} lock={false} isUpShow={false}/>
+                <StopView stop={index} title={item.title} lock={false} isUpShow={false} key={index}/>
               )}
             </View>
             <TouchableOpacity
