@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles';
+import StopView from './stopview';
 
 import logo from '../../images/amazingco-logo-white.png';
 
@@ -102,10 +103,8 @@ class Toolbar extends React.Component {
           <View style={[styles.PickupModal.container]}>
             <Text style={styles.PickupModal.title}>{product.shortName} Clue List</Text>
             <View style={[styles.PickupModal.content, styles.ClueModal.content]}>
-              {stops [0].clues.map((item, index) => 
-                <View key={index}>
-                  <Text>{item.title}</Text>
-                </View>
+              {stops.map((item, index) => 
+                <StopView stop={index} title={item.title} lock={false} isUpShow={false}/>
               )}
             </View>
             <TouchableOpacity

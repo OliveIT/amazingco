@@ -313,14 +313,14 @@ const styles = {
       height: width * 0.7,
       padding: width * 0.02,
       paddingTop: width * 0.03,
-
+      flexDirection: 'row'
     },
     fullWidth: {
       width: width,
       marginBottom: - width * 0.2
     },
     titleContainer: {
-      width: width * 0.8,
+      width: width * 0.7,
       height: width * 0.13,
       flexDirection: 'row',
       paddingLeft: width * 0.05,
@@ -329,6 +329,7 @@ const styles = {
       borderRadius: width * 0.075,
       overflow: 'hidden',
       alignItems: 'center',
+      flex: 1
     },
     fullWidthTitle: {
       width: width * 0.96

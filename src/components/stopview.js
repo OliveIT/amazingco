@@ -31,7 +31,7 @@ class StopView extends React.Component {
     if (stop == 2)
       source = finalImage;
     else
-      source = {uri: this.props.data.stops [1].medias [0].url};
+      source = {uri: this.props.data.stops [stop].medias [0].url};
 
     return (
       <ImageBackground style={[styles.StopView.container, styles.borderRadius, isUpShow ? styles.StopView.fullWidth : {}]} source={source}>
