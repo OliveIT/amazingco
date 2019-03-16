@@ -80,7 +80,8 @@ class Weather extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.reducer.data
+  data: state.reducer.data,
+  curStop: state.reducer.curStop
 });
 
 export default connect(mapStateToProps)(Weather);

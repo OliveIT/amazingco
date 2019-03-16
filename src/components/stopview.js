@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles';
 
-//import whiteback from '../../images/whiteback.png';
+import finalImage from '../../images/final.png';
 
 class StopView extends React.Component {
 
@@ -27,10 +27,14 @@ class StopView extends React.Component {
 
   render() {
     const {stop, title, lock, isUpShow} = this.state;
-    const { url } = this.props.data.stops [stop].medias [0];
+    let source = null;
+    if (stop == 2)
+      source = finalImage;
+    else
+      source = {uri: this.props.data.stops [1].medias [0].url};
 
     return (
-      <ImageBackground style={[styles.StopView.container, styles.borderRadius, isUpShow ? styles.StopView.fullWidth : {}]} source={{uri: url}}>
+      <ImageBackground style={[styles.StopView.container, styles.borderRadius, isUpShow ? styles.StopView.fullWidth : {}]} source={source}>
         <TouchableOpacity style={[styles.StopView.titleContainer, isUpShow ? styles.StopView.fullWidthTitle : {}]} onPress={this.onPress.bind(this)}>
           <Text style={styles.StopView.title}>{title}</Text>
           {lock ?

@@ -17,15 +17,16 @@ class Stops extends React.Component {
   }
 
   onBtnCrackCode() {
-    this.props.navigation.navigate("crackcode");
+    this.props.navigation.push("crackcode");
   }
 
   onBtnSkipCode() {
-    this.props.navigation.navigate("offer");
+    this.props.navigation.push("offer");
   }
 
   render() {
-    const {title, subTitle, text, medias} = this.props.data.stops [0];
+    const {curStop} = this.props;
+    const {title, subTitle, text, medias} = this.props.data.stops [curStop];
 
     return (
       <View style={styles.fullSize}>
@@ -36,7 +37,7 @@ class Stops extends React.Component {
               <View style={styles.Weather.topContentContainer}>
                 <View style={styles.Weather.weather}></View>
                 <Text style={styles.Weather.minorHeaderText}>Clue</Text>
-                <Text style={styles.Weather.mainHeaderText}>One</Text>
+                <Text style={styles.Weather.mainHeaderText}>{curStop == 0 ? 'One' : 'Two'}</Text>
               </View>
             </LinearGradient>
           </ImageBackground>
@@ -63,7 +64,8 @@ class Stops extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.reducer.data
+  data: state.reducer.data,
+  curStop: state.reducer.curStop
 });
 
 export default connect(mapStateToProps)(Stops);

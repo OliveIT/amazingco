@@ -18,15 +18,16 @@ class Easierclue extends React.Component {
   }
 
   onBtnSolve() {
-    this.props.navigation.navigate('offer');
+    this.props.navigation.push('offer');
   }
 
   onBtnGiveup() {
-    this.props.navigation.navigate('offer');
+    this.props.navigation.push('offer');
   }
 
   render() {
-    const {medias, clues} = this.props.data.stops [0];
+    const {curStop} = this.props;
+    const {medias, clues} = this.props.data.stops [curStop];
     const clue = clues [1];
 
     return (
@@ -57,7 +58,8 @@ class Easierclue extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.reducer.data
+  data: state.reducer.data,
+  curStop: state.reducer.curStop
 });
 
 export default connect(mapStateToProps)(Easierclue);

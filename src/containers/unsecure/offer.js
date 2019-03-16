@@ -10,6 +10,7 @@ import StopView from '../../components/stopview';
 import styles from '../../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { setStop } from '../../redux/actions';
 class Offer extends React.Component {
 
   constructor() {
@@ -19,9 +20,23 @@ class Offer extends React.Component {
     }
   }
 
+  onPressNext() {
+    if (this.props.curStop == 0) {
+      this.props.navigation.push("stops");
+      this.props.setStop(this.props.curStop + 1);
+    } else {
+      alert("complete");
+    }
+  }
+
   render() {
-    const {medias, clues, provider, action, where, pois} = this.props.data.stops [0];
+    const {curStop} = this.props;
+    const {medias, clues, provider, action, where, pois} = this.props.data.stops [curStop];
     const clue = clues [0];
+
+    let nextClueTitle = "Next Clue";
+    if (curStop == 1)
+      nextClueTitle = "Final Instruction";
 
     return (
       <View style={styles.fullSize}>
@@ -68,7 +83,7 @@ class Offer extends React.Component {
             )}
           </View>
           
-          <StopView stop={1} title="Next Clue" lock={false} isUpShow={true}/>
+          <StopView stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
         </ScrollView>
         <Toolbar/>
       </View>
@@ -77,7 +92,12 @@ class Offer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.reducer.data
+  data: state.reducer.data,
+  curStop: state.reducer.curStop
 });
 
-export default connect(mapStateToProps)(Offer);
+const mapDispatchToProps = {
+  setStop,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Offer);

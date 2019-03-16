@@ -445,6 +445,7 @@ const styles = {
     contentImage: {
       width: width * 0.9,
       height: width * 0.53,
+      resizeMode: 'contain',
       marginLeft: width * 0.05,
       marginBottom: width * 0.05
     }

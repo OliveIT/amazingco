@@ -18,7 +18,7 @@ class Crackcode extends React.Component {
   }
 
   onBtnSolve() {
-    this.props.navigation.navigate('offer');
+    this.props.navigation.push('offer');
   }
 
   onBtnHint() {
@@ -38,11 +38,13 @@ class Crackcode extends React.Component {
   }
 
   onBtnEasierClue() {
-    this.props.navigation.navigate('easierclue');
+    this.props.navigation.push('easierclue');
   }
 
   render() {
-    const {medias, clues} = this.props.data.stops [0];
+    let {curStop} = this.props;
+    if (!this.props.data.stops [curStop]) curStop = 1;
+    const {medias, clues} = this.props.data.stops [curStop];
     const clue = clues [0];
 
     return (
@@ -79,7 +81,8 @@ class Crackcode extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.reducer.data
+  data: state.reducer.data,
+  curStop: state.reducer.curStop
 });
 
 export default connect(mapStateToProps)(Crackcode);

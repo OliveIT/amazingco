@@ -16,6 +16,6 @@ export const fetchData = (callback) => {
   };
 };
 
-// export const setStop = (stop) => {
-//   return (dispatch) => dispatch({ type: SET_STOP, payload: stop });
-// }
+export const setStop = (stop) => {
+  return (dispatch) => dispatch({ type: SET_STOP, payload: stop });
+}
