@@ -143,13 +143,15 @@ const styles = {
     Container: {
       width: width,
       height: width * 0.35,
+      paddingLeft: width * 0.15,
+      paddingRight: width * 0.15,
       borderTopWidth: 1,
       borderTopColor: '#eee',
       display: 'flex',
       flexDirection: 'row',
       flex: 3,
       justifyContent: 'center', 
-      alignItems: 'center' 
+      alignItems: 'center'
     },
 
     item: {

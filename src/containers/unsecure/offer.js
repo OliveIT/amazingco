@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View, Image, ImageBackground, Text, Alert, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Image, ImageBackground, Text, Alert, TouchableOpacity, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from "react-redux";
 import Modal from "react-native-modal";
@@ -15,6 +15,9 @@ import { setStop } from '../../redux/actions';
 
 import logo from '../../../images/amazingco-logo.png';
 import background from '../../../images/background.png';
+
+const {width} = Dimensions.get("screen");
+
 class Offer extends React.Component {
 
   constructor() {
@@ -23,8 +26,37 @@ class Offer extends React.Component {
       isShowedHint: false,
       modalComplete: false,
       modalFeedback: false,
-      activeFeedback: 10
+      activeFeedback: 10,
+      offset: 0,
+      max: width * 0.7
     }
+  }
+
+  onPressOffTo() {
+//    if (offset >= 0)
+      this.refs.scrollView.scrollToEnd({animated: true});
+//    else
+//      this.refs.scrollView.scrollTo({y: 0, animated: true});
+    return;
+    let {offset} = this.state;
+    let direction = 1;
+    if (offset >= 0)  direction = -1;
+    const handle = setInterval(() => {
+      offset += 25 * direction;
+      this.setState({
+        offset: offset
+      });
+
+      if (offset <= - this.state.max || offset >= 0) {
+        offset = 0;
+        clearInterval(handle);
+        if (offset >= 0)
+          this.refs.scrollView.scrollToEnd({animated: true});
+        else
+          this.refs.scrollView.scrollTo({y: 0, animated: true});
+        return;
+      }
+    }, 50);
   }
 
   onPressNext() {
@@ -63,7 +95,7 @@ class Offer extends React.Component {
 
     return (
       <View style={styles.fullSize}>
-        <ScrollView style={styles.Toolbar.mainContainer}>
+        <ScrollView style={styles.Toolbar.mainContainer} ref="scrollView">
           <ImageBackground source={{uri: medias [0].url}} style={styles.Crackcode.headerImage}>
             <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={styles.Crackcode.headerImage}>
               <BackButton style={styles.backBtn} navigation={this.props.navigation}/>
@@ -72,7 +104,7 @@ class Offer extends React.Component {
 
           <View style={[styles.Weather.mainContainer, styles.borderTopRadius]}>
             <View style={styles.flex}>
-              <Text style={[styles.Weather.contentHeader, {flex: 1}]}>You are off to</Text>
+              <Text style={[styles.Weather.contentHeader, {flex: 1}]} onPress={this.onPressOffTo.bind(this)}>You are off to</Text>
               <View style={styles.iconRing}>
                 <Icon name="unlock-alt" color='#fff' style={styles.BackButton.icon} size={15}></Icon>
               </View>
@@ -105,8 +137,10 @@ class Offer extends React.Component {
             </View>
             )}
           </View>
-          
-          <StopView stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
+          {/*style={{height: this.state.offset}}*/}
+          <StopView 
+            
+            stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
         </ScrollView>
         <Toolbar/>
         

@@ -32,9 +32,13 @@ class StopView extends React.Component {
       source = finalImage;
     else
       source = {uri: this.props.data.stops [stop].medias [0].url};
+    
+    let parentStyle = {};
+    if (this.props.style)
+      parentStyle = this.props.style;
 
     return (
-      <ImageBackground style={[styles.StopView.container, styles.borderRadius, isUpShow ? styles.StopView.fullWidth : {}]} source={source}>
+      <ImageBackground style={[styles.StopView.container, styles.borderRadius, isUpShow ? styles.StopView.fullWidth : {}, parentStyle]} source={source}>
         <TouchableOpacity style={[styles.StopView.titleContainer, isUpShow ? styles.StopView.fullWidthTitle : {}]} onPress={this.onPress.bind(this)}>
           <Text style={styles.StopView.title}>{title}</Text>
           {lock ?
