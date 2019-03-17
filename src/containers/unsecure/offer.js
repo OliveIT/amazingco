@@ -16,7 +16,7 @@ import { setStop } from '../../redux/actions';
 import logo from '../../../images/amazingco-logo.png';
 import background from '../../../images/background.png';
 
-const {width} = Dimensions.get("screen");
+const {width} = Dimensions.get("window");
 
 class Offer extends React.Component {
 

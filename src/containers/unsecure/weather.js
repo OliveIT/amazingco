@@ -10,7 +10,7 @@ import WeatherBox from '../../components/weatherbox';
 import styles from '../../styles';
 import agreement from '../../../images/agreement.png';
 
-const {width} = Dimensions.get("screen");
+const {width} = Dimensions.get("window");
 class Weather extends React.Component {
 
   constructor() {
@@ -55,7 +55,7 @@ class Weather extends React.Component {
     const {weather} = this.props.data;
     const {title, subTitle, text} = this.props.data.introduction;
     const texts = text.split('<br />');
-    const {width, height} = Dimensions.get("screen");
+    const {width, height} = Dimensions.get("window");
 
     const {offset} = this.state;
 
