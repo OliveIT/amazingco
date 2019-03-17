@@ -1,4 +1,4 @@
-package com.dummy;
+package com.eee;
 
 import com.facebook.react.ReactActivity;
 

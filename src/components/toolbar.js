@@ -72,8 +72,7 @@ class Toolbar extends React.Component {
         <Modal
           animationType="slide"
           transparent={true}
-          visible={this.state.modalPickup}
-          swipeDirection='up'>
+          visible={this.state.modalPickup}>
           <View style={[styles.PickupModal.container]}>
             <Text style={styles.PickupModal.title}>Customer Card</Text>
             <View style={styles.PickupModal.content}>
@@ -98,8 +97,7 @@ class Toolbar extends React.Component {
         <Modal
           animationType="slide"
           transparent={true}
-          visible={this.state.modalClue}
-          swipeDirection='up'>
+          visible={this.state.modalClue}>
           <View style={[styles.PickupModal.container]}>
             <Text style={styles.PickupModal.title}>{product.shortName} Clue List</Text>
             <View style={[styles.PickupModal.content, styles.ClueModal.content]}>
