@@ -184,7 +184,8 @@ const styles = {
       fontSize: width * 0.06,
       color: '#fff',
       fontWeight: 'bold',
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      fontFamily: "Proxima"
     },
     content: {
       width: width * 0.9,
@@ -215,16 +216,19 @@ const styles = {
     mainText: {
       color: '#ff765f',
       fontSize: width * 0.09,
-      marginBottom: width * 0.03
+      marginBottom: width * 0.03,
+      fontFamily: "Proxima"
     },
     minorText: {
       color: '#000',
       fontSize: width * 0.06,
       fontWeight: 'bold',
-      marginBottom: width * 0.03
+      marginBottom: width * 0.03,
+      fontFamily: "Proxima"
     },
     description: {
-      fontSize: width * 0.035
+      fontSize: width * 0.035,
+      fontFamily: "Proxima"
     },
     closeButton: {
       justifyContent: 'center', 
@@ -268,7 +272,8 @@ const styles = {
     },
     description: {
       color: '#777',
-      fontSize: width * 0.04
+      fontSize: width * 0.04,
+      fontFamily: "Proxima"
     },
     btnContainer: {
       width: width * 0.7,
@@ -293,7 +298,8 @@ const styles = {
     },
     btnText: {
       color: '#000',
-      fontSize: width * 0.03
+      fontSize: width * 0.03,
+      fontFamily: "Proxima"
     },
     btnActiveText: {
       color: '#fff'
@@ -339,7 +345,8 @@ const styles = {
       color: '#fff',
       flex: 1,
       fontSize: width * 0.05,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontFamily: "Proxima"
     },
     lock: {},
     upIcon: {
@@ -364,7 +371,8 @@ const styles = {
       fontWeight: 'bold',
       color: '#fff',
       width: width,
-      textAlign: 'center'
+      textAlign: 'center',
+      fontFamily: "Proxima"
     },
 
     codeContainer: {
@@ -420,7 +428,8 @@ const styles = {
       fontSize: width * 0.07,
       fontWeight: 'bold',
       color: '#111',
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      fontFamily: "Proxima"
     },
     startBtnContainer: {
       width: width * 0.9,
@@ -455,6 +464,7 @@ const styles = {
       fontSize: width * 0.07,
       color: '#fff',
       fontWeight: 'bold',
+      fontFamily: "Proxima"
     }
   },
 
@@ -473,12 +483,14 @@ const styles = {
     },
     minorHeaderText: {
       color: '#fff',
-      fontSize: width * 0.07
+      fontSize: width * 0.07,
+      fontFamily: "Proxima"
     },
     mainHeaderText: {
       color: '#fff',
       fontSize: width * 0.1,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontFamily: "Proxima"
     },
 
     mainContainer: {
@@ -493,22 +505,26 @@ const styles = {
       color: '#111',
       fontSize: width * 0.07,
       fontWeight: 'bold',
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      fontFamily: "Proxima"
     },
     contentSubTitle: {
       color: '#333',
       fontSize: width * 0.055,
       fontWeight: '100',
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      fontFamily: "Proxima"
     },
     contentText: {
       color: '#666',
       fontSize: width * 0.037,
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      fontFamily: "Proxima"
     },
     contentDescription: {
       color: '#ff765f',
       fontSize: width * 0.037,
+      fontFamily: "Proxima",
       marginBottom: width * 0.05,
       fontWeight: 'bold',
     },
@@ -519,6 +535,7 @@ const styles = {
     agreeCheckText: {
       color: '#333',
       fontSize: width * 0.044,
+      fontFamily: "Proxima",
       fontWeight: '100',
     },
     agreementBackImg: {
@@ -548,11 +565,13 @@ const styles = {
       color: '#ff765f',
       fontSize: width * 0.07,
       marginBottom: width * 0.03,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontFamily: "Proxima"
     },
     minorText: {
       fontSize: width * 0.05,
-      marginBottom: width * 0.04
+      marginBottom: width * 0.04,
+      fontFamily: "Proxima"
     },
     icon: {
       marginTop: 2,
@@ -560,6 +579,7 @@ const styles = {
     },
     description: {
       fontSize: width * 0.04,
+      fontFamily: "Proxima",
       color: '#555',
       marginBottom: width * 0.04
     },
