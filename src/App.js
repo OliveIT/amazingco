@@ -10,11 +10,21 @@ import * as React from 'react';
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Navigation from "./route";
+import SplashScreen from 'react-native-splash-screen'
 //import Splash from "./containers/unsecure/splash";
 
-const App = () => 
-  <Provider store={store}>
-    <Navigation />
-  </Provider>;
+SplashScreen.hide();
 
-export default App;
+export default class App extends React.Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    );
+  }
+}

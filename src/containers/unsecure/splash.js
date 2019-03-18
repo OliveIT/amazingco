@@ -3,6 +3,7 @@ import { View, Image, ImageBackground, Text, Dimensions, TextInput, TouchableOpa
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from "react-redux";
 import { Container, Content } from "native-base";
+
 import { fetchData, setStop } from '../../redux/actions';
 
 import backgroundImage from '../../../images/background.png';
