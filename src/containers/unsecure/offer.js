@@ -32,6 +32,14 @@ class Offer extends React.Component {
     }
   }
 
+  onBack() {
+    if (this.state.offset == 0) {
+      this.props.navigation.goBack();
+      return;
+    }
+    this.onPressOffTo();
+  }
+
   onPressOffTo() {
 //    if (offset >= 0)
 //      this.refs.scrollView.scrollToEnd({animated: true});
@@ -47,7 +55,7 @@ class Offer extends React.Component {
         offset: offset
       });
 
-      if (offset >= this.state.max || offset <= 0) {
+      if (offset >= this.state.max * 1.5 || offset <= 0) {
         clearInterval(handle);
         /*if (offset >= 0)
           this.refs.scrollView.scrollToEnd({animated: true});
@@ -83,21 +91,32 @@ class Offer extends React.Component {
   }
 
   backBtnMarginTop() {
-    let offset = Math.min(this.state.offset, this.state.max * 0.7);
+    let offset = Math.min(this.state.offset, this.state.max);
+    offset = Math.min(offset, this.state.max * 0.7);
     return width * 0.02 + width * 0.06 * (this.state.max - offset) / (this.state.max * 0.7);
   }
 
   getLogoImgHeight() {
-    let offset = Math.min(this.state.offset, this.state.max * 0.7);
+    let offset = Math.min(this.state.offset, this.state.max);
+    offset = Math.min(offset, this.state.max * 0.7);
     return width * 0.1 + width * 0.3 * (this.state.max - offset) / (this.state.max * 0.7);
   }
 
   getContentMarginTop() {
-    let offset = this.state.offset;
+    let offset = Math.min(this.state.offset, this.state.max);
     if (offset > this.state.max * 0.3)
-      offset = this.state.max * 0.3 - offset * 3;
+      offset = this.state.max * 0.3 - offset * 2;
     
     return width * 0.4 * offset / this.state.max;
+  }
+
+  getStopViewMarginTop() {
+    let offset = 0;
+    if (this.state.offset > this.state.max)  offset = this.state.max * 1.5 - this.state.offset;
+    else if (this.state.offset == 0) return 0;
+    else return width * 0.8;
+
+    return width * 0.8 * offset / (this.state.max * 0.5);
   }
 
   render() {
@@ -115,7 +134,7 @@ class Offer extends React.Component {
         <ScrollView style={styles.Toolbar.mainContainer} ref="scrollView">
           <ImageBackground source={{uri: medias [0].url}} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
             <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
-              <BackButton style={[styles.backBtn, {marginTop: this.backBtnMarginTop()}]} navigation={this.props.navigation}/>
+              <BackButton style={[styles.backBtn, {marginTop: this.backBtnMarginTop()}]} navigation={this.props.navigation} onPress={this.onBack.bind(this)}/>
             </LinearGradient>
           </ImageBackground>
 
@@ -155,7 +174,7 @@ class Offer extends React.Component {
             )}
           </View>
           {/*style={{height: this.state.offset}}*/}
-          <StopView stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
+          <StopView style={{marginTop: this.getStopViewMarginTop()}} stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
         </ScrollView>
         <Toolbar/>
         

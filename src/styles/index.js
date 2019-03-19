@@ -138,11 +138,11 @@ const styles = {
   Toolbar: {
     mainContainer: {
       width: width,
-      height: height - width * 0.35
+      height: height - width * 0.3
     },
     Container: {
       width: width,
-      height: width * 0.35,
+      height: width * 0.3,
       paddingLeft: width * 0.15,
       paddingRight: width * 0.15,
       borderTopWidth: 1,
@@ -155,10 +155,11 @@ const styles = {
     },
 
     item: {
-      width: width * 0.35,
+      width: width * 0.32,
       flex: 1,
       justifyContent: 'center', 
-      alignItems: 'center' 
+      alignItems: 'center',
+      marginTop: - width * 0.05
     },
     icon: {
     },
@@ -395,7 +396,8 @@ const styles = {
       flexDirection: 'row',
       paddingLeft: width * 0.05,
       paddingRight: width * 0.005,
-      marginTop: width * 0.05
+      marginTop: width * 0.05,
+      marginBottom: width * 0.2
     },
     codeInput: {
       flex: 1,
