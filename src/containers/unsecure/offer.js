@@ -28,32 +28,31 @@ class Offer extends React.Component {
       modalFeedback: false,
       activeFeedback: 10,
       offset: 0,
-      max: width * 0.7
+      max: 300
     }
   }
 
   onPressOffTo() {
 //    if (offset >= 0)
-      this.refs.scrollView.scrollToEnd({animated: true});
+//      this.refs.scrollView.scrollToEnd({animated: true});
 //    else
 //      this.refs.scrollView.scrollTo({y: 0, animated: true});
-    return;
+
     let {offset} = this.state;
     let direction = 1;
-    if (offset >= 0)  direction = -1;
+    if (offset >= this.state.max)  direction = -1;
     const handle = setInterval(() => {
       offset += 25 * direction;
       this.setState({
         offset: offset
       });
 
-      if (offset <= - this.state.max || offset >= 0) {
-        offset = 0;
+      if (offset >= this.state.max || offset <= 0) {
         clearInterval(handle);
-        if (offset >= 0)
+        /*if (offset >= 0)
           this.refs.scrollView.scrollToEnd({animated: true});
         else
-          this.refs.scrollView.scrollTo({y: 0, animated: true});
+          this.refs.scrollView.scrollTo({y: 0, animated: true});*/
         return;
       }
     }, 50);
@@ -83,6 +82,24 @@ class Offer extends React.Component {
     this.props.navigation.navigate("experience", {curStop: 2});
   }
 
+  backBtnMarginTop() {
+    let offset = Math.min(this.state.offset, this.state.max * 0.7);
+    return width * 0.02 + width * 0.06 * (this.state.max - offset) / (this.state.max * 0.7);
+  }
+
+  getLogoImgHeight() {
+    let offset = Math.min(this.state.offset, this.state.max * 0.7);
+    return width * 0.1 + width * 0.3 * (this.state.max - offset) / (this.state.max * 0.7);
+  }
+
+  getContentMarginTop() {
+    let offset = this.state.offset;
+    if (offset > this.state.max * 0.3)
+      offset = this.state.max * 0.3 - offset * 3;
+    
+    return width * 0.4 * offset / this.state.max;
+  }
+
   render() {
     let {curStop} = this.props;
     if (curStop == 2) curStop = 1;
@@ -96,14 +113,14 @@ class Offer extends React.Component {
     return (
       <View style={styles.fullSize}>
         <ScrollView style={styles.Toolbar.mainContainer} ref="scrollView">
-          <ImageBackground source={{uri: medias [0].url}} style={styles.Crackcode.headerImage}>
-            <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={styles.Crackcode.headerImage}>
-              <BackButton style={styles.backBtn} navigation={this.props.navigation}/>
+          <ImageBackground source={{uri: medias [0].url}} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
+            <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
+              <BackButton style={[styles.backBtn, {marginTop: this.backBtnMarginTop()}]} navigation={this.props.navigation}/>
             </LinearGradient>
           </ImageBackground>
 
           <View style={[styles.Weather.mainContainer, styles.borderTopRadius]}>
-            <View style={styles.flex}>
+            <View style={[styles.flex, {marginTop: this.getContentMarginTop()}]}>
               <Text style={[styles.Weather.contentHeader, {flex: 1}]} onPress={this.onPressOffTo.bind(this)}>You are off to</Text>
               <View style={styles.iconRing}>
                 <Icon name="unlock-alt" color='#fff' style={styles.BackButton.icon} size={15}></Icon>
@@ -138,9 +155,7 @@ class Offer extends React.Component {
             )}
           </View>
           {/*style={{height: this.state.offset}}*/}
-          <StopView 
-            
-            stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
+          <StopView stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
         </ScrollView>
         <Toolbar/>
         
