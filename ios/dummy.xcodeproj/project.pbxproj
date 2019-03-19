@@ -79,6 +79,7 @@
 		617315FB75E84F2E825295F0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F76F0A39335E412CA976262F /* Zocial.ttf */; };
 		BB1C02795EEB470885812C82 /* Proxima.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0D94413AF914B00953CC46B /* Proxima.ttf */; };
 		0108C20C0DDF4043956A544B /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAFE28737084CB4AD20D3BA /* libSplashScreen.a */; };
+		A14D5254F15E47938684E2E5 /* Proxima Nova Alt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F81E50E74982A47150DA /* Proxima Nova Alt.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -430,6 +431,7 @@
 		D0D94413AF914B00953CC46B /* Proxima.ttf */ = {isa = PBXFileReference; name = "Proxima.ttf"; path = "../assets/fonts/Proxima.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5BB4EE755EC74EBDBA70CBAB /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "SplashScreen.xcodeproj"; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		3AAFE28737084CB4AD20D3BA /* libSplashScreen.a */ = {isa = PBXFileReference; name = "libSplashScreen.a"; path = "libSplashScreen.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9AD7F81E50E74982A47150DA /* Proxima Nova Alt.ttf */ = {isa = PBXFileReference; name = "Proxima Nova Alt.ttf"; path = "../assets/fonts/Proxima Nova Alt.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +744,7 @@
 				917F4E41DA634B6CB16FD9AD /* SimpleLineIcons.ttf */,
 				F76F0A39335E412CA976262F /* Zocial.ttf */,
 				D0D94413AF914B00953CC46B /* Proxima.ttf */,
+				9AD7F81E50E74982A47150DA /* Proxima Nova Alt.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1227,6 +1230,7 @@
 				C91E44FFA6144BC3B4B72514 /* SimpleLineIcons.ttf in Resources */,
 				617315FB75E84F2E825295F0 /* Zocial.ttf in Resources */,
 				BB1C02795EEB470885812C82 /* Proxima.ttf in Resources */,
+				A14D5254F15E47938684E2E5 /* Proxima Nova Alt.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

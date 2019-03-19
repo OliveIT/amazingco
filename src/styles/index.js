@@ -185,7 +185,7 @@ const styles = {
       color: '#fff',
       fontWeight: 'bold',
       marginBottom: width * 0.05,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     content: {
       width: width * 0.9,
@@ -217,18 +217,18 @@ const styles = {
       color: '#ff765f',
       fontSize: width * 0.09,
       marginBottom: width * 0.03,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     minorText: {
       color: '#000',
       fontSize: width * 0.06,
       fontWeight: 'bold',
       marginBottom: width * 0.03,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     description: {
       fontSize: width * 0.035,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     closeButton: {
       justifyContent: 'center', 
@@ -273,7 +273,7 @@ const styles = {
     description: {
       color: '#777',
       fontSize: width * 0.04,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     btnContainer: {
       width: width * 0.7,
@@ -299,7 +299,7 @@ const styles = {
     btnText: {
       color: '#000',
       fontSize: width * 0.03,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     btnActiveText: {
       color: '#fff'
@@ -346,7 +346,7 @@ const styles = {
       flex: 1,
       fontSize: width * 0.05,
       fontWeight: 'bold',
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     lock: {},
     upIcon: {
@@ -372,7 +372,7 @@ const styles = {
       color: '#fff',
       width: width,
       textAlign: 'center',
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
 
     codeContainer: {
@@ -429,7 +429,7 @@ const styles = {
       fontWeight: 'bold',
       color: '#111',
       marginBottom: width * 0.05,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     startBtnContainer: {
       width: width * 0.9,
@@ -464,7 +464,7 @@ const styles = {
       fontSize: width * 0.07,
       color: '#fff',
       fontWeight: 'bold',
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     }
   },
 
@@ -484,13 +484,13 @@ const styles = {
     minorHeaderText: {
       color: '#fff',
       fontSize: width * 0.07,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     mainHeaderText: {
       color: '#fff',
       fontSize: width * 0.1,
       fontWeight: 'bold',
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
 
     mainContainer: {
@@ -506,25 +506,25 @@ const styles = {
       fontSize: width * 0.07,
       fontWeight: 'bold',
       marginBottom: width * 0.05,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     contentSubTitle: {
       color: '#333',
       fontSize: width * 0.055,
       fontWeight: '100',
       marginBottom: width * 0.05,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     contentText: {
       color: '#666',
       fontSize: width * 0.037,
       marginBottom: width * 0.05,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     contentDescription: {
       color: '#ff765f',
       fontSize: width * 0.037,
-      fontFamily: "Proxima",
+      fontFamily: "Proxima Nova Alt",
       marginBottom: width * 0.05,
       fontWeight: 'bold',
     },
@@ -535,7 +535,7 @@ const styles = {
     agreeCheckText: {
       color: '#333',
       fontSize: width * 0.044,
-      fontFamily: "Proxima",
+      fontFamily: "Proxima Nova Alt",
       fontWeight: '100',
     },
     agreementBackImg: {
@@ -566,12 +566,12 @@ const styles = {
       fontSize: width * 0.07,
       marginBottom: width * 0.03,
       fontWeight: 'bold',
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     minorText: {
       fontSize: width * 0.05,
       marginBottom: width * 0.04,
-      fontFamily: "Proxima"
+      fontFamily: "Proxima Nova Alt"
     },
     icon: {
       marginTop: 2,
@@ -579,7 +579,7 @@ const styles = {
     },
     description: {
       fontSize: width * 0.04,
-      fontFamily: "Proxima",
+      fontFamily: "Proxima Nova Alt",
       color: '#555',
       marginBottom: width * 0.04
     },
