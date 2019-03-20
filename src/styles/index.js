@@ -13,7 +13,8 @@ const styles = {
   borderTopRadius: {
     borderTopRightRadius: width * 0.05,
     borderTopLeftRadius: width * 0.05,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    borderColor: '#fff',
   },
   borderBottomRadius: {
     borderBottomRightRadius: width * 0.05,
@@ -31,6 +32,7 @@ const styles = {
     width: width * 0.8,
     backgroundColor: '#aaa',
     alignSelf: 'center',
+    marginBottom: width * 0.02,
   },
 
   flex: {
@@ -62,8 +64,8 @@ const styles = {
       overflow: 'hidden',
       paddingLeft: 5,
       paddingRight: 5,
-      paddingTop: 2,
-      paddingBottom: 2,
+      paddingTop: 3,
+      paddingBottom: 3,
       justifyContent: 'center', 
       alignItems: 'center' 
     },
@@ -102,6 +104,7 @@ const styles = {
       alignItems: 'center',
       paddingLeft: width * 0.1,
       paddingRight: width * 0.1,
+      marginTop: width * 0.05,
       marginBottom: width * 0.05,
     },
     blue: {
@@ -140,11 +143,12 @@ const styles = {
   Toolbar: {
     mainContainer: {
       width: width,
-      height: height - width * 0.3
+      height: height - width * 0.19
     },
     Container: {
       width: width,
-      height: width * 0.3,
+      height: width * 0.2,
+      marginTop: -width * 0.01,
       paddingLeft: width * 0.15,
       paddingRight: width * 0.15,
       borderTopWidth: 1,
@@ -153,7 +157,9 @@ const styles = {
       flexDirection: 'row',
       flex: 3,
       justifyContent: 'center', 
-      alignItems: 'center'
+      alignItems: 'center',
+      alignContent: 'center',
+      alignSelf: 'center',
     },
 
     item: {
@@ -161,7 +167,8 @@ const styles = {
       flex: 1,
       justifyContent: 'center', 
       alignItems: 'center',
-      marginTop: - width * 0.05
+      alignSelf: 'center',
+      alignContent: 'center',
     },
     icon: {
     },
@@ -545,8 +552,9 @@ const styles = {
     agreementBackImg: {
       width: width,
       height: width * 1.2,
-      marginTop: - width * 0.2,
-      paddingTop: width * 0.7
+      marginTop: - width * 0.05,
+      paddingTop: width * 0.7,
+    backgroundColor: '#fff'
     }
   },
 
@@ -559,8 +567,8 @@ const styles = {
       width: width * 0.9,
       height: width * 0.53,
       resizeMode: 'contain',
-      marginLeft: width * 0.05,
-      marginBottom: width * 0.05
+      marginBottom: width * 0.05,
+      marginTop: width * 0.05,
     }
   },
 

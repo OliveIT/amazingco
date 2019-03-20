@@ -105,7 +105,7 @@ class Offer extends React.Component {
   getContentMarginTop() {
     let offset = Math.min(this.state.offset, this.state.max);
     if (offset > this.state.max * 0.3)
-      offset = this.state.max * 0.3 - offset * 2;
+      offset = this.state.max * 0.3 - offset * 1.7;
     
     return width * 0.4 * offset / this.state.max;
   }
@@ -172,9 +172,9 @@ class Offer extends React.Component {
               </View>
             </View>
             )}
-          </View>
           {/*style={{height: this.state.offset}}*/}
-          <StopView style={{marginTop: this.getStopViewMarginTop()}} stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
+            <StopView style={{marginTop: this.getStopViewMarginTop(), marginLeft: - width * 0.05}} stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
+            </View>
         </ScrollView>
         <Toolbar/>
         

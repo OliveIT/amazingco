@@ -81,7 +81,7 @@ class Weather extends React.Component {
           </LinearGradient>
         </ImageBackground>
 
-        <View style={[styles.Weather.mainContainer, styles.borderTopRadius, {marginTop: offset}]}>
+        <View style={[styles.Weather.mainContainer, styles.borderTopRadius, {marginTop: offset - width * 0.05}]}>
           <Text style={styles.Weather.contentHeader}>{title}</Text>
           <Text style={styles.Weather.contentSubTitle} onPress={this.onPressSubTitle.bind(this)}>{subTitle}</Text>
           {texts.map((text, index) => 

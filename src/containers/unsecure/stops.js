@@ -47,15 +47,15 @@ class Stops extends React.Component {
             <Text style={styles.Weather.contentSubTitle}>{subTitle}</Text>
             <Text style={styles.Weather.contentText}>{text}</Text>
             <View style={styles.line}></View>
-          </View>
 
-          <TouchableOpacity style={[styles.Button.container, styles.Button.blue]} onPress={this.onBtnCrackCode.bind(this)}>
-            <Text style={styles.Button.text}>Crack the Code</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.LinkButton.container} onPress={this.onBtnSkipCode.bind(this)}>
-            <Text style={styles.LinkButton.text}>Skip code</Text>
-          </TouchableOpacity>
+              <TouchableOpacity style={[styles.Button.container, styles.Button.blue]} onPress={this.onBtnCrackCode.bind(this)}>
+                <Text style={styles.Button.text}>Crack the Code</Text>
+              </TouchableOpacity>
+            
+              <TouchableOpacity style={styles.LinkButton.container} onPress={this.onBtnSkipCode.bind(this)}>
+                <Text style={styles.LinkButton.text}>Skip code</Text>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
         <Toolbar />
       </View>

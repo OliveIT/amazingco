@@ -60,7 +60,6 @@ class Crackcode extends React.Component {
           <Text style={styles.Weather.contentSubTitle}>{clue.subTitle}</Text>
           <Text style={styles.Weather.contentText}>{clue.text}</Text>
           <View style={styles.line}></View>
-        </View>
 
         <Image source={{uri: clue.medias [0].url}} style={styles.Crackcode.contentImage}/>
         
@@ -75,6 +74,7 @@ class Crackcode extends React.Component {
         <TouchableOpacity style={[styles.Button.container, styles.Button.orange]} onPress={this.onBtnEasierClue.bind(this)}>
           <Text style={styles.Button.text}>I need an easier clue</Text>
         </TouchableOpacity> }
+            </View>
       </ScrollView>
     );
   }

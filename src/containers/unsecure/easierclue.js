@@ -45,6 +45,7 @@ class Easierclue extends React.Component {
           <View style={styles.line}></View>
         </View>
 
+        <View style={{marginTop: -5, backgroundColor: '#fff'}}>
         <TouchableOpacity style={styles.LinkButton.container} onPress={this.onBtnSolve.bind(this)}>
           <Text style={styles.LinkButton.text}>I've solved it</Text>
         </TouchableOpacity>
@@ -52,6 +53,7 @@ class Easierclue extends React.Component {
         <TouchableOpacity style={[styles.Button.container, styles.Button.blue]} onPress={this.onBtnGiveup.bind(this)}>
           <Text style={styles.Button.text}>I give up, show me the answer</Text>
         </TouchableOpacity>
+        </View>
       </ScrollView>
     );
   }
