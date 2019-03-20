@@ -160,6 +160,7 @@ const styles = {
       alignItems: 'center',
       alignContent: 'center',
       alignSelf: 'center',
+      backgroundColor: '#fff'
     },
 
     item: {
