@@ -62,6 +62,8 @@ const styles = {
       overflow: 'hidden',
       paddingLeft: 5,
       paddingRight: 5,
+      paddingTop: 2,
+      paddingBottom: 2,
       justifyContent: 'center', 
       alignItems: 'center' 
     },
