@@ -60,7 +60,7 @@ class Weather extends React.Component {
     const {offset} = this.state;
 
     return (
-      <ScrollView style={styles.fullSize}>
+      <ScrollView style={styles.fullSize} bounces={false}>
         <ImageBackground source={{uri: presentation.medias [0].url}}
           style={[styles.Weather.headerImage]}>
           <LinearGradient colors={['#00000000', '#00000000', '#000000ff']}

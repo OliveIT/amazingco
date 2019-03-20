@@ -30,7 +30,7 @@ class Stops extends React.Component {
 
     return (
       <View style={styles.fullSize}>
-        <ScrollView style={styles.Toolbar.mainContainer}>
+        <ScrollView style={styles.Toolbar.mainContainer} bounces={false}>
           <ImageBackground source={{uri: medias [0].url}} style={styles.Weather.headerImage}>
             <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={styles.Weather.headerImage}>
               <BackButton style={styles.backBtn} navigation={this.props.navigation}/>

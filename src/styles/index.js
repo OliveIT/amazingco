@@ -399,7 +399,6 @@ const styles = {
       paddingLeft: width * 0.05,
       paddingRight: width * 0.005,
       marginTop: width * 0.05,
-      marginBottom: width * 0.2
     },
     codeInput: {
       flex: 1,
@@ -456,7 +455,8 @@ const styles = {
       width: width * 0.4,
       marginTop: width * 0.01,
       marginBottom: width * 0.01,
-      textAlign: 'center'
+      textAlign: 'center',
+      overflow: 'hidden'
     },
     space: {
       flex: 1

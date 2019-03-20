@@ -31,7 +31,7 @@ class Easierclue extends React.Component {
     const clue = clues [1];
 
     return (
-      <ScrollView style={styles.fullSize}>
+      <ScrollView style={styles.fullSize} bounces={false}>
         <ImageBackground source={{uri: medias [0].url}} style={styles.Crackcode.headerImage}>
           <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={styles.Crackcode.headerImage}>
             <BackButton style={styles.backBtn} navigation={this.props.navigation}/>

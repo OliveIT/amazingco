@@ -57,7 +57,7 @@ class Splash extends React.Component {
     return (
       <Container>
         <Content>
-          <View style={[styles.fullSize, this.state.isFocusCode ? { backgroundColor: '#000' } : {}, {height: null}]}>
+          <View style={[styles.fullSize, this.state.isFocusCode ? { backgroundColor: '#000' } : {}]}>
             <View style={[styles.fullSize, styles.borderBottomRadius, {height: height * this.state.splashHeight }]}>
               <ImageBackground source={backgroundImage} style={[styles.fullSize, {height: height * this.state.splashHeight }]}>
                 <LinearGradient colors={['#00000000', '#000000ff']} style={[styles.fullSize, styles.Splash.gradientBack]}>

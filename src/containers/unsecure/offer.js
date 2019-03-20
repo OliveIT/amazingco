@@ -131,7 +131,7 @@ class Offer extends React.Component {
 
     return (
       <View style={styles.fullSize}>
-        <ScrollView style={styles.Toolbar.mainContainer} ref="scrollView">
+        <ScrollView style={styles.Toolbar.mainContainer} ref="scrollView" bounces={false}>
           <ImageBackground source={{uri: medias [0].url}} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
             <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={[styles.Crackcode.headerImage, {height: this.getLogoImgHeight()}]}>
               <BackButton style={[styles.backBtn, {marginTop: this.backBtnMarginTop()}]} navigation={this.props.navigation} onPress={this.onBack.bind(this)}/>

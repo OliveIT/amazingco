@@ -48,7 +48,7 @@ class Crackcode extends React.Component {
     const clue = clues [0];
 
     return (
-      <ScrollView style={styles.Toolbar.fullSize}>
+      <ScrollView style={styles.Toolbar.fullSize} bounces={false}>
         <ImageBackground source={{uri: medias [0].url}} style={styles.Crackcode.headerImage}>
           <LinearGradient colors={['#00000000', '#00000000', '#000000ff']} style={styles.Crackcode.headerImage}>
             <BackButton style={styles.backBtn} navigation={this.props.navigation}/>
