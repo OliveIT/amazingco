@@ -17,7 +17,7 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      splashHeight: 1,
+      splashHeight: 1.1,
       isFocusCode: false
     }
   }
