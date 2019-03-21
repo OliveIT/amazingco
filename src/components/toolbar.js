@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Image, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Image, Text, TouchableOpacity, Alert, Platform } from 'react-native';
 import Modal from "react-native-modal";
 import { connect } from "react-redux";
 
@@ -56,6 +56,11 @@ class Toolbar extends React.Component {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
+        Platform.OS == 'ios' ? {
+          text: 'Cancel',
+          onPress: () => {},
+          style: 'cancel'
+        } : null
       ],
       {cancelable: true},
     );
