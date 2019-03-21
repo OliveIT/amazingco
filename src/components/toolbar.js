@@ -8,6 +8,7 @@ import styles from '../styles';
 import StopView from './stopview';
 
 import logo from '../../images/amazingco-logo-white.png';
+import { setStop } from '../redux/actions';
 
 class ToolbarItem extends React.Component {
   constructor(props) {
@@ -60,6 +61,14 @@ class Toolbar extends React.Component {
     );
   }
 
+  onStopViewPress(item, index) {
+    this.setState({
+      modalClue: false
+    });
+    this.props.setStop(index);
+    this.props.navigation.navigate("stops");
+  }
+
   render() {
     const {customer, product, stops} = this.props.data;
 
@@ -102,7 +111,7 @@ class Toolbar extends React.Component {
             <Text style={styles.PickupModal.title}>{product.shortName} Clue List</Text>
             <View style={[styles.PickupModal.content, styles.ClueModal.content]}>
               {stops.map((item, index) => 
-                <StopView stop={index} title={item.title} lock={false} isUpShow={false} key={index}/>
+                <StopView stop={index} title={item.title} lock={false} isUpShow={false} key={index} onPress={this.onStopViewPress.bind(this, item, index)}/>
               )}
             </View>
             <TouchableOpacity
@@ -121,4 +130,8 @@ const mapStateToProps = state => ({
   data: state.reducer.data
 });
 
-export default connect(mapStateToProps)(Toolbar);
+const mapDispatchToProps = {
+  setStop,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);

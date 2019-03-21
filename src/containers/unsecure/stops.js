@@ -57,7 +57,7 @@ class Stops extends React.Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
-        <Toolbar />
+        <Toolbar navigation={this.props.navigation}/>
       </View>
     );
   }

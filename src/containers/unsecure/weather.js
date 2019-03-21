@@ -9,6 +9,7 @@ import WeatherBox from '../../components/weatherbox';
 
 import styles from '../../styles';
 import agreement from '../../../images/agreement.png';
+import { setStop } from '../../redux/actions';
 
 const {width} = Dimensions.get("window");
 class Weather extends React.Component {
@@ -47,6 +48,7 @@ class Weather extends React.Component {
   }
 
   onBtnSee() {
+    this.props.setStop(0);
     this.props.navigation.navigate("stops");
   }
 
@@ -116,4 +118,8 @@ const mapStateToProps = state => ({
   curStop: state.reducer.curStop
 });
 
-export default connect(mapStateToProps)(Weather);
+const mapDispatchToProps = {
+  setStop,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Weather);

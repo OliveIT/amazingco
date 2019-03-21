@@ -41,11 +41,6 @@ class Offer extends React.Component {
   }
 
   onPressOffTo() {
-//    if (offset >= 0)
-//      this.refs.scrollView.scrollToEnd({animated: true});
-//    else
-//      this.refs.scrollView.scrollTo({y: 0, animated: true});
-
     let {offset} = this.state;
     let direction = 1;
     if (offset >= this.state.max)  direction = -1;
@@ -57,10 +52,6 @@ class Offer extends React.Component {
 
       if (offset >= this.state.max * 1.5 || offset <= 0) {
         clearInterval(handle);
-        /*if (offset >= 0)
-          this.refs.scrollView.scrollToEnd({animated: true});
-        else
-          this.refs.scrollView.scrollTo({y: 0, animated: true});*/
         return;
       }
     }, 50);
@@ -87,6 +78,9 @@ class Offer extends React.Component {
   }
 
   onBtnFeedback() {
+    this.setState({
+      modalFeedback: false,
+    });
     this.props.navigation.navigate("experience", {curStop: 2});
   }
 
@@ -176,7 +170,7 @@ class Offer extends React.Component {
             <StopView style={{marginTop: this.getStopViewMarginTop(), marginLeft: - width * 0.05}} stop={curStop + 1} title={nextClueTitle} lock={false} isUpShow={true} onPress={this.onPressNext.bind(this)}/>
             </View>
         </ScrollView>
-        <Toolbar/>
+        <Toolbar navigation={this.props.navigation}/>
         
         <Modal
           animationType="slide"

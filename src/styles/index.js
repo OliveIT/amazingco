@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 const {width, height} = Dimensions.get("window");
 
 const styles = {
@@ -143,12 +143,12 @@ const styles = {
   Toolbar: {
     mainContainer: {
       width: width,
-      height: height - width * 0.19
+      height: Platform.OS == 'ios' ? height - width * 0.19 : height - width * 0.29
     },
     Container: {
       width: width,
-      height: width * 0.2,
-      marginTop: -width * 0.01,
+      height: Platform.OS == 'ios' ? width * 0.2 : width * 0.3,
+      marginTop: Platform.OS == 'ios' ? - width * 0.01 : - width * 0.05,
       paddingLeft: width * 0.15,
       paddingRight: width * 0.15,
       borderTopWidth: 1,
@@ -200,11 +200,11 @@ const styles = {
     },
     content: {
       width: width * 0.9,
-      height: height - width * 0.55,
+      height: height - width * 0.5,
       borderRadius: width * 0.05,
       overflow: 'hidden',
       backgroundColor: '#fff',
-      marginBottom: width * 0.1
+      marginBottom: width * 0.05
     },
     imageHeaderContainer: {
       width: width * 0.9,
@@ -323,7 +323,7 @@ const styles = {
       width: width * 0.15,
       height: width * 0.15,
       borderRadius: width * 0.75,
-      marginTop: width * 0.1
+      marginTop: width * 0.05
     }
   },
 
