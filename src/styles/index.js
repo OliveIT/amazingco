@@ -294,7 +294,7 @@ const styles = {
     },
     btn: {
       width: width * 0.08,
-      height: width * 0.08,
+      height: width * 0.11,
       marginLeft: width * 0.02,
       marginRight: width * 0.02,
       backgroundColor: '#e1e8ee',
@@ -309,7 +309,7 @@ const styles = {
     },
     btnText: {
       color: '#000',
-      fontSize: width * 0.03,
+      fontSize: width * 0.05,
       fontFamily: "Proxima Nova Alt"
     },
     btnActiveText: {
